@@ -11,7 +11,7 @@ aws s3api create-bucket --bucket acl-example-987 --region us-west-1
 ```sh
 aws s3api put-public-access-block \
 --bucket acl-example-987 \
---public-access-block-configuration "BlockPublicAcls-fakse,IgnorePublicAcls=false,BlockPublicPolicy=true,RestrictPublicBuckets=true"
+--public-access-block-configuration "BlockPublicAcls-false,IgnorePublicAcls=false,BlockPublicPolicy=true,RestrictPublicBuckets=true"
 ```
 
 ```sh
