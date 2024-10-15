@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+
+# absolute path
+root_path=$(realpath .)
+# config_path="$(realpath ..)/python.toml"
+
+# if [ ! -f "$config_path" ]; then
+#     echo "Config path does not exist"
+#     exit 1
+# fi
+
+echo "== SAM deploy..."
+# echo "loading configuration: $config_path"
+
+sam deploy \
+    --config-file "$config_path" \
+    --template-file "./.aws-sam/build/template.yaml" \
+    --stack-name "inline-lambda-py" \
+    --capabilities "CAPABILITY_IAM"

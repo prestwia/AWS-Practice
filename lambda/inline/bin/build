@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -env
+
+# absolute path of samconfig.toml
+root_path=$(realpath .)
+template_path="${root_path}/template.yml"
+function_path="${root_path}/function"
+
+# same build
+echo "== SAM build..."
+echo "using template: ${template_path}"
+echo "using function at: ${function_path}"
+sam build \
+    --template-file "${template_path}"
